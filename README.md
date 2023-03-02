@@ -1,3 +1,5 @@
+[![Test Multiple Python Versions](https://github.com/TebogoTS/python-for-devops-2023/actions/workflows/main.yml/badge.svg)](https://github.com/TebogoTS/python-for-devops-2023/actions/workflows/main.yml)
+
 # python-for-devops-2023
 From zero rep to devops
 
