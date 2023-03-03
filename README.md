@@ -15,9 +15,9 @@ Create development environment that is cloud-based:
 
 Build out python scaffold:
 
-* Makefile
-* requirements.txt
-* test_library.py
+* [Makefile](https://github.com/TebogoTS/python-for-devops-2023/blob/main/Makefile)
+* [requirements.txt](https://github.com/TebogoTS/python-for-devops-2023/blob/main/requirements.txt)
+* [test_library.py](https://github.com/TebogoTS/python-for-devops-2023/blob/main/test_devopslib.py)
 * python_library
 * Dockerfile
 * command-line-tool
