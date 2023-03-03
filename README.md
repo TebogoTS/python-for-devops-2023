@@ -39,3 +39,6 @@ Build out python scaffold:
 ![fastapi_microservices](https://user-images.githubusercontent.com/38659219/222801737-c150333e-13bd-486d-a87a-52d0628fae04.png)
 
 ## Containerized Continuous Delivery
+
+* AWS CodeBuild
+* AWS AppRunner
