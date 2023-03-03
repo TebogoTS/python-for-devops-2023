@@ -18,13 +18,14 @@ Build out python scaffold:
 * [Makefile](https://github.com/TebogoTS/python-for-devops-2023/blob/main/Makefile)
 * [requirements.txt](https://github.com/TebogoTS/python-for-devops-2023/blob/main/requirements.txt)
 * [test_library.py](https://github.com/TebogoTS/python-for-devops-2023/blob/main/test_devopslib.py)
-* python_library
+* [python_library](https://github.com/TebogoTS/python-for-devops-2023/tree/main/devopslib)
 * Dockerfile
 * command-line-tool
 * Microservice
 
 1. Create a virtualenv: `virtualenv ~/.venv`
-2. edit my `~/.bashrc`
+2. edit my `~/.bashrc` `source ~/.venv/bin/activate`
+3. clone project then run `make all`
 
 ### AWS CloudShell
 ### AWS Cloud9
