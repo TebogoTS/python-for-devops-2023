@@ -1,6 +1,6 @@
 [![Test Multiple Python Versions](https://github.com/TebogoTS/python-for-devops-2023/actions/workflows/main.yml/badge.svg)](https://github.com/TebogoTS/python-for-devops-2023/actions/workflows/main.yml)
 
-[![AWS CodeBuild](https://codebuild.us-east-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiQ2FtbnZ6Sy9JUEp1YWkrUzg5THhZZlZNVUZPMVE3Vno1c0dQM0ZIdVRnQ283SjcxM2xmMm1rTmNXblZTK2d2cW9BMmlveDR2akZpUHVPTDZaS0NGUUZBPSIsIml2UGFyYW1ldGVyU3BlYyI6InI1bUpuQ25xR2JEakpmUVMiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=main)
+[![AWS CodeBuild](https://codebuild.us-east-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiQ2FtbnZ6Sy9JUEp1YWkrUzg5THhZZlZNVUZPMVE3Vno1c0dQM0ZIdVRnQ283SjcxM2xmMm1rTmNXblZTK2d2cW9BMmlveDR2akZpUHVPTDZaS0NGUUZBPSIsIml2UGFyYW1ldGVyU3BlYyI6InI1bUpuQ25xR2JEakpmUVMiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=main)]
 
 # python-for-devops-2023
 From zero rep to devops
