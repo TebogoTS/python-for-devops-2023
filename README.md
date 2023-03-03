@@ -34,5 +34,6 @@ Build out python scaffold:
 ![stepfunctions_graph](https://user-images.githubusercontent.com/38659219/222779196-0e4ee171-6311-4565-ae89-d8b03302c6ef.png)
 
 ## Microservices
+![fastapi_microservices](https://user-images.githubusercontent.com/38659219/222801737-c150333e-13bd-486d-a87a-52d0628fae04.png)
 
 ## Containerized Continuous Delivery
