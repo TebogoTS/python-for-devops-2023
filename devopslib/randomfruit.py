@@ -7,13 +7,13 @@ def fruit():
 
 
 def meal(beverage):
-  my_fruit = fruit()
-  print(f"Your fruit is {my_fruit} and your beverage is {beverage}")
-  if my_fruit == "cherry":
-    complete_meal = f"Your meal is a {my_fruit} and {beverage}"
-    return complete_meal
-  alternate_meal = f"Your meal is steak and {beverage}"
-  return alternate_meal
+    my_fruit = fruit()
+    print(f"Your fruit is {my_fruit} and your beverage is {beverage}")
+    if my_fruit == "cherry":
+        complete_meal = f"Your meal is a {my_fruit} and {beverage}"
+        return complete_meal
+    alternate_meal = f"Your meal is steak and {beverage}"
+    return alternate_meal
 
 
 # var = 1
