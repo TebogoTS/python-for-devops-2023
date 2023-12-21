@@ -4,21 +4,24 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Install Buildah
-      run: |
-        apt-get update
-        apt-get install -y buildah
-    - name: Checkout code
-      uses: actions/checkout@v2
-    - name: Authenticate with Artifactory/Docker Hub
-      run: |
-        echo "{\"auths\":{\"https://index.docker.io/v1/\": {\"username\": \"$DOCKERHUB_USERNAME\", \"password\": \"$DOCKERHUB_TOKEN\"}}}" > my-auth.conf
-        buildah login --authfile my-auth.conf docker.io
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-      env: 
-        DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-        DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
-    - name: Buiild with Buildah
-      run:
-        buildah bud -t docker.io/mahlomojats/thousandeyes:test ./thousandeyes-scraper
-        buildah push docker.io/mahlomojats/thousandeyes:test
+      - name: Install Buildah
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y buildah
+
+      - name: Authenticate with Artifactory/Docker Hub
+        run: |
+          echo "{\"auths\":{\"https://index.docker.io/v1/\": {\"username\": \"$DOCKERHUB_USERNAME\", \"password\": \"$DOCKERHUB_TOKEN\"}}}" > my-auth.conf
+          buildah login --authfile my-auth.conf docker.io
+
+        env: 
+          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build with Buildah
+        run:
+          buildah bud -t docker.io/mahlomojats/thousandeyes:test ./thousandeyes-scraper
+          buildah push docker.io/mahlomojats/thousandeyes:test
