@@ -23,7 +23,7 @@ jobs:
 
       - name: Build with Buildah
         run:
-          buildah bud -t docker.io/mahlomojats/thousandeyes:test .
+          buildah bud -t mahlomojats/thousandeyes:test .
           
       - name: Buildah list images
         run:
@@ -31,4 +31,4 @@ jobs:
           
       - name: Push with Buildah
         run:
-          buildah push docker.io/mahlomojats/thousandeyes:test docker.io/mahlomojats/thousandeyes:test
+          buildah push mahlomojats/thousandeyes:test docker.io/mahlomojats/thousandeyes:test
