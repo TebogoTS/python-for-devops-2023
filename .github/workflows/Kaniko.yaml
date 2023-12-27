@@ -19,6 +19,7 @@ jobs:
           wget https://github.com/GoogleContainerTools/kaniko/archive/refs/tags/v1.19.2.tar.gz -q
           mkdir -p $HOME/kaniko/bin
           tar -xvf v1.19.2.tar.gz -C $HOME/kaniko/bin
+          chmod a+x $HOME/kaniko/bin
 
       # Build and push Docker image using Kaniko
       - name: Build and push Docker image
