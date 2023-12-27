@@ -15,7 +15,7 @@ jobs:
       - name: Authenticate with Artifactory/Docker Hub
         run: |
           echo "{\"auths\":{\"registry.hub.docker.com\": {\"username\": \"$DOCKERHUB_USERNAME\", \"password\": \"$DOCKERHUB_TOKEN\"}}}" > my-auth.conf
-          buildah login --authfile my-auth.conf docker.io
+          buildah login --authfile my-auth.conf registry.hub.docker.com
 
         env: 
           DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
