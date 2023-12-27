@@ -14,8 +14,8 @@ jobs:
 
       - name: Authenticate with Artifactory/Docker Hub
         run: |
-          echo "{\"auths\":{\"registry.hub.docker.com\": {\"username\": \"$DOCKERHUB_USERNAME\", \"password\": \"$DOCKERHUB_TOKEN\"}}}" > my-auth.conf
-          buildah login --authfile my-auth.conf registry.hub.docker.com --debug
+          echo "{\"auths\":{\"https://index.docker.io/v2/\": {\"username\": \"$DOCKERHUB_USERNAME\", \"password\": \"$DOCKERHUB_TOKEN\"}}}" > my-auth.conf
+          buildah login --authfile my-auth.conf docker.io
 
         env: 
           DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
@@ -23,7 +23,7 @@ jobs:
 
       - name: Build with Buildah
         run:
-          buildah bud -t  docker.io/mahlomojats/thousandeyes:test .
+          buildah bud -t  docker.io/mahlomojats/1000eyes:test .
           
       - name: Buildah list images
         run:
@@ -31,4 +31,4 @@ jobs:
           
       - name: Push with Buildah
         run:
-          buildah push  docker.io/mahlomojats/thousandeyes:test
+          buildah push  docker.io/mahlomojats/1000eyes:test
