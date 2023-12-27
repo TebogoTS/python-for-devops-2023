@@ -17,18 +17,22 @@ jobs:
           echo "{\"auths\":{\"mahlomojats/1000eyes\": {\"username\": \"$DOCKERHUB_USERNAME\", \"password\": \"$DOCKERHUB_TOKEN\"}}}" > my-auth.conf
           buildah login --authfile my-auth.conf docker.io
 
+          cat $HOME/.docker/config.json  
+
+          ls $HOME/.config/containers
+
         env: 
           DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-          DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+          DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}   
 
-      - name: Build with Buildah
-        run:
-          buildah bud -t  docker.io/mahlomojats/1000eyes:test .
+      # - name: Build with Buildah
+      #   run:
+      #     buildah bud -t  docker.io/mahlomojats/1000eyes:test .
           
-      - name: Buildah list images
-        run:
-          buildah images
+      # - name: Buildah list images
+      #   run:
+      #     buildah images
           
-      - name: Push with Buildah
-        run:
-          buildah push --log-level=debug docker.io/mahlomojats/1000eyes:test
+      # - name: Push with Buildah
+      #   run:
+      #     buildah push --log-level=debug docker.io/mahlomojats/1000eyes:test
