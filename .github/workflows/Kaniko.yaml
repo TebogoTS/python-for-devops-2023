@@ -23,10 +23,10 @@ jobs:
       # Build and push Docker image using Kaniko
       - name: Build and push Docker image
         run: |
-          ls -la $HOME/kaniko/bin
-          $HOME/kaniko/bin/kaniko-1.19.2 --context ${{ github.workspace }} --dockerfile ${{ github.workspace }}/Dockerfile \
-                             --destination mahlomojats/1000eyes:test \
-                             --build-arg BUILD_ARG_NAME=1000eyes
+          ls -la $HOME/kaniko/bin/kaniko-1.19.2 
+          # $HOME/kaniko/bin/kaniko-1.19.2 --context ${{ github.workspace }} --dockerfile ${{ github.workspace }}/Dockerfile \
+          #                    --destination mahlomojats/1000eyes:test \
+          #                    --build-arg BUILD_ARG_NAME=1000eyes
 
         env:
           DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
