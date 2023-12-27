@@ -15,8 +15,9 @@ jobs:
       - name: Authenticate with Artifactory/Docker Hub
         run: |
           mkdir -p $HOME/.docker
-          echo "{\"auths\":{\"mahlomojats/1000eyes\": {\"username\": \"$DOCKERHUB_USERNAME\", \"password\": \"$DOCKERHUB_TOKEN\"}}}" > $HOME/.docker/config.json
-          buildah login --authfile my-auth.conf docker.io
+          echo "${{ secrets.DOCKERHUB_USERNAME }}"
+          # echo "{\"auths\":{\"mahlomojats/1000eyes\": {\"username\": \"$DOCKERHUB_USERNAME\", \"password\": \"$DOCKERHUB_TOKEN\"}}}" > $HOME/.docker/config.json
+          # buildah login --authfile my-auth.conf docker.io
 
           cat $HOME/.docker/config.json
 
