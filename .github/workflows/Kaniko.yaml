@@ -23,10 +23,7 @@ jobs:
       # Build and push Docker image using Kaniko
       - name: Build and push Docker image
         run: |
-          /home/runner/kaniko/bin/kaniko --context /home/runner/work/python-for-devops-2023/python-for-devops-2023 \
-                                --dockerfile /home/runner/work/python-for-devops-2023/python-for-devops-2023/Dockerfile \
-                                --destination mahlomojats/1000eyes:test \
-                                --build-arg BUILD_ARG_NAME=1000eyes
+          ls -la $HOME/kaniko/bin
 
         env:
           DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
