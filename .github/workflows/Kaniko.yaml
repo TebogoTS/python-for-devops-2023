@@ -1,0 +1,31 @@
+name: Kaniko Build and Push
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build_and_push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Set up Kaniko
+      - name: Set up Kaniko
+        run: |
+          wget https://github.com/GoogleContainerTools/kaniko/releases/download/v1.7.0/kaniko-linux-amd64-v1.7.0.tar.gz -q
+          mkdir -p /kaniko/bin
+          tar -xvf kaniko-linux-amd64-v1.7.0.tar.gz -C /kaniko/bin
+
+      # Build and push Docker image using Kaniko
+      - name: Build and push Docker image
+        run: |
+          /kaniko/bin/kaniko --context ${{ github.workspace }} --dockerfile ${{ github.workspace }}/Dockerfile \
+                             --destination mahlomojats/1000eyes:test \
+                             --build-arg BUILD_ARG_NAME=1000eyes
+        env:
+          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
