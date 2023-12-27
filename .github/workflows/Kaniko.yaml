@@ -16,14 +16,14 @@ jobs:
       # Set up Kaniko
       - name: Set up Kaniko
         run: |
-          sudo wget https://github.com/GoogleContainerTools/kaniko/archive/refs/tags/v1.19.2.tar.gz -q
-          sudo mkdir -p /kaniko/bin
-          sudo tar -xvf v1.19.2.tar.gz -C /kaniko/bin
+          wget https://github.com/GoogleContainerTools/kaniko/archive/refs/tags/v1.19.2.tar.gz -q
+          mkdir -p $HOME/kaniko/bin
+          tar -xvf v1.19.2.tar.gz -C $HOME/kaniko/bin
 
       # Build and push Docker image using Kaniko
       - name: Build and push Docker image
         run: |
-          sudo /kaniko/bin/kaniko --context ${{ github.workspace }} --dockerfile ${{ github.workspace }}/Dockerfile \
+          $HOME/kaniko/bin/kaniko --context ${{ github.workspace }} --dockerfile ${{ github.workspace }}/Dockerfile \
                              --destination mahlomojats/1000eyes:test \
                              --build-arg BUILD_ARG_NAME=1000eyes
         env:
