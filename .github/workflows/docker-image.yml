@@ -31,4 +31,4 @@ jobs:
           
       - name: Push with Buildah
         run:
-          buildah push  docker.io/mahlomojats/1000eyes:test --log-level=debug
+          buildah push --log-level=debug docker.io/mahlomojats/1000eyes:test
