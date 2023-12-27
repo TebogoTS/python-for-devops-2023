@@ -17,9 +17,7 @@ jobs:
           mkdir -p $HOME/.docker
           echo "${{ secrets.DOCKERHUB_USERNAME }}"
           echo "{\"auths\":{\"mahlomojats/1000eyes\": {\"username\": \"$DOCKERHUB_USERNAME\", \"password\": \"$DOCKERHUB_TOKEN\"}}}" > $HOME/.docker/config.json
-          # buildah login --authfile my-auth.conf docker.io
-
-          cat $HOME/.docker/config.json
+          buildah login --authfile $HOME/.docker/config.json docker.io
 
         env: 
           DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
